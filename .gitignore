@@ -22,8 +22,9 @@ CMakeCache.txt
 CMakeFiles/
 cmake_install.cmake
 
-# makefiles.
+# makefiles. exclude the Makefile in root directory
 Makefile
+!/Makefile
 
 # in-source build.
 bin/
