@@ -51,6 +51,7 @@ bazel-*
 build/
 _build/
 build*/
+*.log
 
 # in-source dependencies
 /googletest/

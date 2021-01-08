@@ -34,17 +34,14 @@ if (DEFINED BENCHMARK_CXX_LINKER_FLAGS)
   list(APPEND CMAKE_EXE_LINKER_FLAGS ${BENCHMARK_CXX_LINKER_FLAGS})
 endif()
 
-add_library(output_test_helper STATIC output_test_helper.cc output_test.h)
-
 macro(compile_easydev_test name)
   add_executable(${name} "${name}.cc")
   target_link_libraries(${name} easydev benchmark fmt ${CMAKE_THREAD_LIBS_INIT})
 endmacro(compile_easydev_test)
 
 # Demonstration executable
-
 foreach (FILE_NAME ${TEST_SRC})
-	STRING(REGEX REPLACE ".+/(.+)\\..*" "\\1" FILE_NAME ${TEST_SRC})
+	STRING(REGEX REPLACE ".+/(.+)\\..*" "\\1" FILE_NAME ${FILE_NAME})
 	compile_easydev_test(${FILE_NAME})
 	add_test(NAME test_${FILE_NAME} COMMAND ${FILE_NAME} --benchmark_min_time=0.01)
 endforeach()
