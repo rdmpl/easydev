@@ -1,6 +1,6 @@
 #include <fmt/format.h>
 
-int main(){
-	fmt::print("hello word.\n");
-	return 0;
+int main() {
+  fmt::print("hello, easydev.\n");
+  return 0;
 }
